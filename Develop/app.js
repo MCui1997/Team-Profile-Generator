@@ -125,11 +125,16 @@ function newMember(){
           if (nextMember == 'N' && containsManager == "true")
           {
 
-                // Render and write file
+                // Render and write file to output
                 var final = render(employees);
                 fs.writeFile('output/team.html', final, function (err) {
                   if (err) return console.log(err);
                       });
+
+                      //write file to docs folder for github pages
+                      fs.writeFile('../docs/index.html', final, function (err) {
+                        if (err) return console.log(err);
+                            });
           }
 
 

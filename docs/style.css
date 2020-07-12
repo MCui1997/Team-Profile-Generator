@@ -1,0 +1,70 @@
+.team-heading{
+	
+	font-family: 'Nanum Gothic', sans-serif;
+}
+
+.second-heading{
+	font-family: 'Montserrat', sans-serif;
+}
+
+.jumbotron{
+	background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+	color: white;
+	border-style: solid;
+}
+
+
+#cardr{
+	display: flex;
+    justify-content: center;
+}
+
+.card-header{
+	background-color: transparent;
+	color: white;
+}
+.card{
+	margin-bottom: 50px;
+	background-color: transparent;
+	border-color: white;
+	border-style: solid;
+}
+
+.card-body{
+	background-color: transparent;
+	border-color: white;
+	border-style: solid;
+}
+
+
+body {
+	background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+	background-size: 900% 900%;
+	animation: gradient 30s ease infinite;
+	text-align: center;
+
+	
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+html::-webkit-scrollbar {
+	display: none;
+  }
+  
+  html::-webkit-scrollbar {
+	-ms-overflow-style: none;
+	scrollbar-width: none;
+  }
+  
+  
