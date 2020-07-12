@@ -26,4 +26,12 @@ As a manager
 I want to generate a webpage that displays my team's basic info
 so that I have quick access to emails and GitHub profiles
 ```
-## Screenshots
+## Screenshots + Instructions
+
+1. After installation, right click on develop to open terminal and enter "node app.js"
+
+2. Answer the prompts in the command line
+
+3. After completion, an html file will be generated in "output" folder
+
+4. Open the team profile html
