@@ -9,6 +9,8 @@ const OUTPUT_DIR = path.resolve(__dirname, "output");
 const outputPath = path.join(OUTPUT_DIR, "team.html");
 
 const render = require("./lib/htmlRenderer");
+const { resolve } = require("path");
+const { rejects } = require("assert");
 
 const employees = [];
 
@@ -56,68 +58,46 @@ function init(){
 
             case 'Engineer':
             info = "Github username";
-            inquirer.prompt([
-              {
-
-                name: "roleInfo",
-                message:"Please enter team member's " +info
-                }
-          ])
-
-            
             break;
 
             case 'Intern':
             info = "school name";
-            inquirer.prompt([
-              {
-
-                name: "roleInfo",
-                message:"Please enter team member's " +info
-                }
-          ])
-
             break;
 
             case 'Manager':
             info = "office phone number";
-            inquirer.prompt([
-              {
-
-                name: "roleInfo",
-                message:"Please enter team member's " +info
-                }
-          ])
             break;
         }
 
+        inquirer.prompt([{
+          message: "Enter team member's " +info,
+          name: "roleInfo"
+        }
+      ])
+      .then(function(roleInfo){
+
+        let member;
+
+        if (role == "Engineer"){
+          member = new Engineer(name,id,email,roleInfo);
+        } else if (role == "Intern"){
+          member = new Intern(name,id,email,roleInfo);
+        } else if (role == "Manager"){
+          member = new Manager(name,id,email,roleInfo);
+        }
+
+        employees.push(member);
+        var final = render(employees);
+        fs.writeFile('output/team.html', final, function (err) {
+          if (err) return console.log(err);
+        });
+      })
+
     })
-    //Add all info into the object so we can add to array
-    .then(function(name,role,id,email,roleInfo){
-      let member;
+  }
 
-      switch(role){
-        case 'Engineer':
-        member = new Engineer(name,id,email,roleInfo)
-        break;
-
-        case 'Intern':
-        member = new Intern(name,id,email,roleInfo)
-
-        break;
-
-        case 'Manager':
-        member = new Manager(name,id,email,roleInfo)
-        break;
-      }
-
-      employees.push(member);
-    })
-    
-}
 
 init();
-
 
 
 
