@@ -3,15 +3,15 @@ const Employee = require("./Employee");
 
 //Want to inherit from employee class
 class Engineer extends Employee{
-    constructor(name, id, email, gitHub){
+    constructor(name, id, email, github){
 
         //Super will call the functions from employee
         super (name,id,email)
-        this.gitHub = gitHub;
+        this.github = github;
     }
-    getGitHub(){
+    getGithub(){
 
-        return this.gitHub;
+        return this.github;
     }
     getRole(){
 
