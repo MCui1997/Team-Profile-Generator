@@ -27,7 +27,7 @@ const questions = [
       type: "list",
       message: "Please select the member's role.",
       name: "role",
-      choices: ["Intern", "Engineer", "Manager"]
+      choices: ['Intern', 'Engineer', 'Manager']
     },
     {
       type: "input",
@@ -47,36 +47,76 @@ function init(){
 
     inquirer
     .prompt(questions)
-    .then(function(response){
+    .then(function({name,role,id,email}){
 
         let info = "";
 
-        switch(response.role){
+        //Switch statement for the three different employee types
+        switch(role){
 
             case 'Engineer':
             info = "Github username";
-            inquirer.prompt([{
-                type: "input",
-                mesaage:"Please enter team member's" +info
+            inquirer.prompt([
+              {
 
-            }])
+                name: "roleInfo",
+                message:"Please enter team member's " +info
+                }
+          ])
+
+            
             break;
 
             case 'Intern':
-            info = "School name";
+            info = "school name";
+            inquirer.prompt([
+              {
+
+                name: "roleInfo",
+                message:"Please enter team member's " +info
+                }
+          ])
+
             break;
 
             case 'Manager':
-            info = "Office Number";
+            info = "office phone number";
+            inquirer.prompt([
+              {
+
+                name: "roleInfo",
+                message:"Please enter team member's " +info
+                }
+          ])
             break;
         }
 
-    });
+    })
+    //Add all info into the object so we can add to array
+    .then(function(name,role,id,email,roleInfo){
+      let member;
+
+      switch(role){
+        case 'Engineer':
+        member = new Engineer(name,id,email,roleInfo)
+        break;
+
+        case 'Intern':
+        member = new Intern(name,id,email,roleInfo)
+
+        break;
+
+        case 'Manager':
+        member = new Manager(name,id,email,roleInfo)
+        break;
+      }
+
+      employees.push(member);
+    })
     
 }
 
 init();
-
 
 
 
