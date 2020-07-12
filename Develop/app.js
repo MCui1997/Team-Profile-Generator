@@ -11,6 +11,7 @@ const { resolve } = require("path");
 const { rejects } = require("assert");
 
 const employees = [];
+let containsManager = "";
 
 // Write code to use inquirer to gather information about the development team members,
 // and to create objects for each team member (using the correct classes as blueprints!)
@@ -69,7 +70,7 @@ function newMember(){
             break;
 
             case 'Manager':
-            info = "office phone number";
+            info = "office number";
             break;
         }
 
@@ -91,6 +92,8 @@ function newMember(){
           member = new Intern(name,id,email,roleInfo);
         } else if (role == "Manager"){
           member = new Manager(name,id,email,roleInfo);
+          containsManager = "true";
+
         }
         
         //added to the array
@@ -110,13 +113,27 @@ function newMember(){
             newMember();
             
             //If they are done entering members, render the html
-          }else{
+          }
+
+          if(nextMember == 'N' && containsManager != "true"){
+
+                //Validation, need at least one manager in every team
+                console.log("Team must contain a manager, please add another member")
+                newMember();
+          }
+
+          if (nextMember == 'N' && containsManager == "true")
+          {
+
                 // Render and write file
                 var final = render(employees);
                 fs.writeFile('output/team.html', final, function (err) {
                   if (err) return console.log(err);
                       });
           }
+
+
+
         })
     
         
@@ -127,6 +144,6 @@ function newMember(){
 
 
 
-
+//Call init function
 init();
 
