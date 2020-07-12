@@ -38,4 +38,5 @@ so that I have quick access to emails and GitHub profiles
 ![Alt text](/screenshots/html.png "Main")
 
 4. Open the team profile html
+
 ![Alt text](/screenshots/final.PNG "Main")
