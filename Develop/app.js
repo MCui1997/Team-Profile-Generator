@@ -10,11 +10,12 @@ const outputPath = path.join(OUTPUT_DIR, "team.html");
 
 const render = require("./lib/htmlRenderer");
 
+const employees = [];
 
 // Write code to use inquirer to gather information about the development team members,
 // and to create objects for each team member (using the correct classes as blueprints!)
 
-//Questions for user
+//Questions for all employees
 const questions = [
 
     {
@@ -41,8 +42,40 @@ const questions = [
      
 ];
 
+//initial function
+function init(){
 
+    inquirer
+    .prompt(questions)
+    .then(function(response){
 
+        let info = "";
+
+        switch(response.role){
+
+            case 'Engineer':
+            info = "Github username";
+            inquirer.prompt([{
+                type: "input",
+                mesaage:"Please enter team member's" +info
+
+            }])
+            break;
+
+            case 'Intern':
+            info = "School name";
+            break;
+
+            case 'Manager':
+            info = "Office Number";
+            break;
+        }
+
+    });
+    
+}
+
+init();
 
 
 
