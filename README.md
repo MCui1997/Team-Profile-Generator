@@ -8,6 +8,18 @@ Repo: https://github.com/MCui1997/Team-Profile-Generator
 
 Deployed: https://mcui1997.github.io/Team-Profile-Generator/
 
+## Features
+
+* 4 Test Files for employee, engineer, manager, and intern
+* templates for html
+* app.js for calling from command line
+
+## Installation
+
+1. Clone the repo to device
+2. Run npm install
+3. Open terminal in Develop and type in "node app.js"
+
 ## User Story
 ```
 As a manager
