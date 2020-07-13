@@ -29,13 +29,14 @@ so that I have quick access to emails and GitHub profiles
 ## Screenshots + Instructions
 
 1. After installation, right click on develop to open terminal and enter "node app.js"
-![Alt text](/screenshots/main.PNG "Main")
+![Alt text](/screenshots/main.png "Main")
 
 2. Answer the prompts in the command line
 ![Alt text](/screenshots/prompts.PNG "Main")
 
 3. After completion, an html file will be generated in "output" folder
-![Alt text](/screenshots/html.PNG "Main")
+![Alt text](/screenshots/html.png "Main")
 
 4. Open the team profile html
+
 ![Alt text](/screenshots/final.PNG "Main")
