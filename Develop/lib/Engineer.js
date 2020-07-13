@@ -5,6 +5,10 @@ const Employee = require("./Employee");
 class Engineer extends Employee{
     constructor(name, id, email, github){
 
+        if (!github) {
+            throw new Error("You are missing a github username.");
+          }
+
         //Super will call the functions from employee
         super (name,id,email)
         this.github = github;

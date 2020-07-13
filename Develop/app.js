@@ -127,6 +127,7 @@ function newMember(){
 
                 // Render and write file to output
                 var final = render(employees);
+                console.log("You've succesfully created your Team Profile!")
                 fs.writeFile('output/team.html', final, function (err) {
                   if (err) return console.log(err);
                       });

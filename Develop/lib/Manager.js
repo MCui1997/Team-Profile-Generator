@@ -6,6 +6,10 @@ const Employee = require("./Employee");
 class Manager extends Employee{
     constructor(name, id, email, officeNumber){
 
+        if (!officeNumber) {
+            throw new Error("You are missing an officeNumber.");
+          }
+
         //Super will call the functions from employee
         super (name,id,email)
         this.officeNumber = officeNumber;
