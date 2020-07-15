@@ -4,9 +4,9 @@ The Team Profile Generator uses test driven development to create a CLA that can
 
 ## Links
 
-Repo: https://github.com/MCui1997/Team-Profile-Generator
+[Repo](https://github.com/MCui1997/Team-Profile-Generator)
 
-Deployed: https://mcui1997.github.io/Team-Profile-Generator/
+[Deployed](https://mcui1997.github.io/Team-Profile-Generator/)
 
 ## Features
 
